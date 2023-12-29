@@ -4,11 +4,11 @@ layout: workshop      # DON'T CHANGE THIS.
 # online workshop) are available at
 # https://carpentries.github.io/workshop-template/customization/index.html
 venue: "Sejong University"        # brief name of the institution that hosts the workshop without address (e.g., "Euphoric State University")
-address: "FIXME"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria"), videoconferencing URL, or 'online'
+address: "서울특별시 광진구 능동로 209(군자동) 집현관 501B호"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria"), videoconferencing URL, or 'online'
 country: "kr"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes) for the institution that hosts the workshop
 language: "ko"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for the workshop
-latitude: "37.5518018"        # decimal latitude of workshop venue (use https://www.latlong.net/)
-longitude: "127.0736345"       # decimal longitude of the workshop venue (use https://www.latlong.net)
+latitude: "37.5489553"      # decimal latitude of workshop venue (use https://www.latlong.net/)
+longitude: "127.0737662"       # decimal longitude of the workshop venue (use https://www.latlong.net)
 humandate: "Jan 17-18, 2024"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
 humantime: "10:00 am - 5:00 pm KST (1:00 am - 8:00 am UTC)"    # human-readable times for the workshop e.g., "9:00 am - 4:30 pm CEST (7:00 am - 2:30 pm UTC)"
 startdate: 2024-01-17      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
@@ -16,7 +16,7 @@ enddate: 2024-01-18        # machine-readable end date for the workshop in YYYY-
 instructor: ["Kwangchun Lee"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
 helper: ["Jonghwa Shin", "Choonghyun Ryu"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
 email: ["Kwangchun.lee.7@gmail.com"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
-collaborative_notes:  # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document (e.g., https://pad.carpentries.org/2024-01-17-sejong)
+collaborative_notes: https://pad.carpentries.org/2024-01-17-sejong # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document (e.g., https://pad.carpentries.org/2024-01-17-sejong)
 eventbrite:  785583911627   # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
 ---
 
@@ -36,8 +36,6 @@ And run 'make workshop-check' *before* committing to make sure that changes are 
 8< ============= For a workshop delete from here =============
 For a workshop please delete the following block until the next dashed-line
 {% endcomment %}
-
-
 
 
 
@@ -355,26 +353,37 @@ of code below the Schedule `<h2>` header below with
 
 <h2 id="schedule">Schedule</h2>
 
-{% if site.carpentry == "swc" %}
-{% include swc/schedule.html %}
-{% elsif site.carpentry == "dc" %}
-{% include dc/schedule.html %}
-{% elsif site.carpentry == "lc" %}
-{% include lc/schedule.html %}
-{% elsif site.carpentry == "incubator" %}
-This workshop is teaching a lesson in [The Carpentries Incubator](https://carpentries-incubator.org/).
-Please check [the lesson homepage]({{ site.incubator_lesson_site }}) for a list of lesson sections and estimated timings.
-{% endif %}
+<div class="row">
+  <div class="col-md-6">
+    <h3>Day 1</h3>
+    <table class="table table-striped">
+      <tr> <td>10:00</td>  <td>Automating Tasks with the Unix Shell</td> </tr>
+      <tr> <td>11:30</td>  <td>Morning break</td> </tr>
+      <tr> <td>12:00</td>  <td>Automating Tasks with the Unix Shell (Continued)</td> </tr>
+      <tr> <td>13:00</td>  <td>Lunch break</td> </tr>
+      <tr> <td>14:00</td>  <td>R for Reproducible Scientific Analysis</td> </tr>
+      <tr> <td>15:30</td>  <td>Afternoon break</td> </tr>
+      <tr> <td>16:00</td>  <td>R for Reproducible Scientific Analysis (Continued)</td> </tr>
+      <tr> <td>17:00</td>  <td>Wrap-up</td> </tr>
+      <tr> <td>17:30</td>  <td>END</td> </tr>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <h3>Day 2</h3>
+    <table class="table table-striped">
+      <tr> <td>10:00</td>  <td>Version Control with Git</td> </tr>
+      <tr> <td>11:30</td>  <td>Morning break</td> </tr>
+      <tr> <td>12:00</td>  <td>Version Control with Git (Continued)</td> </tr>
+      <tr> <td>13:00</td>  <td>Lunch break</td> </tr>
+      <tr> <td>14:00</td>  <td>Managing Data with SQL</td> </tr>
+      <tr> <td>15:30</td>  <td>Afternoon break</td> </tr>
+      <tr> <td>16:00</td>  <td>Managing Data with SQL (Continued)</td> </tr>
+      <tr> <td>17:00</td>  <td>Wrap-up</td> </tr>
+      <tr> <td>17:30</td>  <td>END</td> </tr>
+    </table>
+  </div>
+</div>
 
-{% comment %}
-Edit/replace the text above if you want to include a schedule table.
-See the contents of the _includes/custom-schedule.html file for an example of
-how one of these schedule tables is constructed.
-{% endcomment %}
-
-{% if site.pilot %}
-The lesson taught in this workshop is being piloted and a precise schedule is yet to be established. The workshop will include regular breaks. Please [contact the workshop organisers](#contact) if you would like more information about the planned schedule.
-{% endif %}
 
 <hr/>
 
@@ -442,3 +451,4 @@ Please check the "Setup" page of
 [the lesson site]({{ site.incubator_lesson_site }}) for instructions to follow
 to obtain the software and data you will need to follow the lesson.
 {% endif %}
+
